@@ -6,12 +6,10 @@ namespace H37kouya\PhpAst\Console\Commands;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor\ChangeClassNameVisitor;
 use H37kouya\PhpAst\Core\Utils\Path;
-use PhpParser\Node;
-use PhpParser\Node\Stmt\Class_;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\CloningVisitor;
-use PhpParser\NodeVisitorAbstract;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
 use RuntimeException;
@@ -69,15 +67,7 @@ final class TestPracticeCommand extends Command
         $newStmts = $traverser->traverse($oldStmts);
 
         $traverser = new NodeTraverser();
-        $traverser->addVisitor(new class () extends NodeVisitorAbstract {
-            public function enterNode(Node $node): void
-            {
-                // クラス名の変更
-                if ($node instanceof Class_) {
-                    $node->name = 'UserIdCopy';
-                }
-            }
-        });
+        $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
         $newStmts = $traverser->traverse($newStmts);
         $printer = new Standard();
         $result = $printer->printFormatPreserving($newStmts, $oldStmts, $oldTokens);
