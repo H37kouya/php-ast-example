@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Console\Commands;
 
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
 use H37kouya\PhpAst\Core\Utils\Path;
-use PhpParser\Lexer\Emulative;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
 use PhpParser\NodeTraverser;
@@ -20,6 +21,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class TestPracticeCommand extends Command
 {
+    private RawCodeToParseData $rawCodeToParseData;
+
+    public function __construct()
+    {
+        $this->rawCodeToParseData = new RawCodeToParseData(
+            new ParserFactory()
+        );
+
+        parent::__construct();
+    }
+
     protected function configure(): void
     {
         $this
@@ -45,38 +57,11 @@ final class TestPracticeCommand extends Command
             throw new RuntimeException('ファイルの取得に失敗しました');
         }
 
-        // PHP ファイルの解析
-        // $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
-
-        // try {
-        //     $ast = $parser->parse($fp);
-        // } catch (Error $error) {
-        //     echo "Parse error: {$error->getMessage()}\n";
-
-        //     return;
-        // }
-
-        // AST の表示
-        // $dumper = new NodeDumper();
-        // echo $dumper->dump($ast)."\n";
-
-        $lexer = new Emulative([
-            'usedAttributes' => [
-                'comments',
-                'startLine',
-                'endLine',
-                'startTokenPos',
-                'endTokenPos',
-            ],
-            'phpVersion' => Emulative::PHP_8_1,
-        ]);
-        $parser = (new ParserFactory())->create(
-            ParserFactory::PREFER_PHP7,
-            $lexer
-        );
-
-        $oldStmts = $parser->parse($fp);
-        $oldTokens = $lexer->getTokens();
+        // ファイルから生のコードを AST に変換
+        $rawCode = new RawCode($fp);
+        $parseData = $this->rawCodeToParseData->__invoke($rawCode);
+        $oldStmts = $parseData->hasStmts() ? $parseData->getStmts() : null;
+        $oldTokens = $parseData->hasTokens() ? $parseData->getTokens() : [];
 
         // AST の修正
         $traverser = new NodeTraverser();
