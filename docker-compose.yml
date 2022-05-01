@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+      target: ${APP_BUILD_TARGET:-development}
+    volumes:
+      - type: bind
+        source: ./php-src
+        target: /data
