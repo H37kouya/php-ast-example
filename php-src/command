@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use H37kouya\PhpAst\Console\Commands\TestPracticeCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('php-ast', '0.0.1');
+
+$app->add(new TestPracticeCommand());
+
+$app->run();
