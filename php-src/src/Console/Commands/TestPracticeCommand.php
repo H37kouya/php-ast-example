@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Console\Commands;
 
+use H37kouya\PhpAst\Core\Utils\Path;
 use PhpParser\Lexer\Emulative;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
@@ -35,10 +36,10 @@ final class TestPracticeCommand extends Command
 
         // PHP ファイルの取得
         $output->writeln(
-            $this->basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
+            Path::basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
         );
         $fp = file_get_contents(
-            $this->basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
+            Path::basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
         );
         if (false === $fp) {
             throw new RuntimeException('ファイルの取得に失敗しました');
@@ -97,21 +98,11 @@ final class TestPracticeCommand extends Command
         $result = $printer->printFormatPreserving($newStmts, $oldStmts, $oldTokens);
 
         // PHP ファイルへの書き込み
-        $newPath = $this->basePath('/sample/ddd/Domain/ValueObjects/UserIdCopy.php');
+        $newPath = Path::basePath('/sample/ddd/Domain/ValueObjects/UserIdCopy.php');
         if (false === file_put_contents($newPath, $result)) {
             throw new RuntimeException('ファイルの書き込みに失敗しました');
         }
 
         return self::SUCCESS;
-    }
-
-    private function basePath(string $path): string
-    {
-        $basePath = realpath(__DIR__.'/../../../');
-        if (false === $basePath) {
-            throw new RuntimeException('ファイルのパスの生成に失敗しました');
-        }
-
-        return $basePath.$path;
     }
 }
