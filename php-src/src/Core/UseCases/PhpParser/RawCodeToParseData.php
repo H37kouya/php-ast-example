@@ -9,6 +9,9 @@ use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
 use PhpParser\Lexer\Emulative;
 use PhpParser\ParserFactory;
 
+/**
+ * PHP の生のコードを AST に変換する UseCase.
+ */
 final class RawCodeToParseData
 {
     private Emulative $lexer;
