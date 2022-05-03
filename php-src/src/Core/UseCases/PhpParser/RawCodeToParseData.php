@@ -15,10 +15,10 @@ use PhpParser\ParserFactory;
  */
 final class RawCodeToParseData
 {
-    private Emulative $lexer;
+    private readonly Emulative $lexer;
 
     public function __construct(
-        private ParserFactory $parserFactory,
+        private readonly ParserFactory $parserFactory,
     ) {
         $this->lexer = new Emulative([
             'usedAttributes' => [

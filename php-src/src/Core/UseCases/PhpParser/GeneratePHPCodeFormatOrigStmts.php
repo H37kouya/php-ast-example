@@ -15,7 +15,7 @@ use PhpParser\PrettyPrinter\Standard;
 final class GeneratePHPCodeFormatOrigStmts
 {
     public function __construct(
-        private Standard $prettyPrinter,
+        private readonly Standard $prettyPrinter,
     ) {
     }
 

@@ -9,7 +9,7 @@ use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
 /**
  * PHP のコード.
  */
-final class PHPCode implements IValueObject
+class PHPCode implements IValueObject
 {
     public function __construct(
         private readonly string $value
