@@ -6,17 +6,18 @@ namespace H37kouya\PhpAst\Core\Domain\PhpParser\Entities;
 
 use H37kouya\PhpAst\Core\Domain\Base\Entities\IEntity;
 use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
 use PhpParser\Node\Stmt;
 
 final class ParseData implements IEntity
 {
     /**
      * @param null|Stmt[] $stmts
-     * @param array       $tokens
+     * @param CodeTokens  $tokens
      */
     public function __construct(
         private readonly ?array $stmts,
-        private readonly array $tokens,
+        private readonly CodeTokens $tokens,
     ) {
         if (null !== $stmts) {
             foreach ($stmts as $stmt) {
@@ -37,7 +38,7 @@ final class ParseData implements IEntity
         return $this->stmts;
     }
 
-    public function getTokens(): array
+    public function getTokens(): CodeTokens
     {
         return $this->tokens;
     }
@@ -56,7 +57,7 @@ final class ParseData implements IEntity
     {
         return new self(
             $arr['stmts'] ?? null,
-            $arr['tokens'] ?? [],
+            new CodeTokens($arr['tokens'] ?? []),
         );
     }
 
@@ -64,7 +65,9 @@ final class ParseData implements IEntity
     {
         return [
             'stmts' => $this->stmts,
-            'tokens' => $this->tokens,
+            'tokens' => $this->hasTokens()
+                ? $this->getTokens()->get()
+                : null,
         ];
     }
 }

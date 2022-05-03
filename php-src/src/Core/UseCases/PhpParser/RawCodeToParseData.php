@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Core\UseCases\PhpParser;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\Entities\ParseData;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
 use PhpParser\Lexer\Emulative;
 use PhpParser\ParserFactory;
@@ -39,7 +40,7 @@ final class RawCodeToParseData
         );
 
         $stmts = $parser->parse($rawCode->get());
-        $tokens = $this->lexer->getTokens();
+        $tokens = new CodeTokens($this->lexer->getTokens());
 
         return new ParseData(
             stmts: $stmts,

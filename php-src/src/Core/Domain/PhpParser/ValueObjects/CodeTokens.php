@@ -7,16 +7,16 @@ namespace H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects;
 use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
 
 /**
- * ファイルから取得した生のコード.
+ * ファイルのフォーマットを表す.
  */
-final class RawCode implements IValueObject
+final class CodeTokens implements IValueObject
 {
     public function __construct(
-        private readonly string $value
+        private readonly array $value
     ) {
     }
 
-    public function get(): string
+    public function get(): array
     {
         return $this->value;
     }
@@ -28,6 +28,6 @@ final class RawCode implements IValueObject
 
     public function __toString(): string
     {
-        return (string) $this->get();
+        return implode(separator: ',', array: $this->get());
     }
 }

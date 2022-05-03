@@ -59,7 +59,7 @@ final class TestPracticeCommand extends Command
         $rawCode = new RawCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawCode);
         $oldStmts = $parseData->hasStmts() ? $parseData->getStmts() : null;
-        $oldTokens = $parseData->hasTokens() ? $parseData->getTokens() : [];
+        $oldTokens = $parseData->getTokens();
 
         // AST の修正
         $traverser = new NodeTraverser();
@@ -70,7 +70,7 @@ final class TestPracticeCommand extends Command
         $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
         $newStmts = $traverser->traverse($newStmts);
         $printer = new Standard();
-        $result = $printer->printFormatPreserving($newStmts, $oldStmts, $oldTokens);
+        $result = $printer->printFormatPreserving($newStmts, $oldStmts, $oldTokens->get());
 
         // PHP ファイルへの書き込み
         $newPath = Path::basePath('/sample/ddd/Domain/ValueObjects/UserIdCopy.php');
