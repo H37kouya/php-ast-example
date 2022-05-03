@@ -6,7 +6,7 @@ namespace H37kouya\PhpAst\Core\UseCases\PhpParser;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\Entities\ParseData;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
-use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
 use PhpParser\Lexer\Emulative;
 use PhpParser\ParserFactory;
 
@@ -32,14 +32,14 @@ final class RawCodeToParseData
         ]);
     }
 
-    public function __invoke(RawCode $rawCode): ParseData
+    public function __invoke(RawPHPCode $rawPHPCode): ParseData
     {
         $parser = $this->parserFactory->create(
             ParserFactory::PREFER_PHP7,
             $this->lexer
         );
 
-        $stmts = $parser->parse($rawCode->get());
+        $stmts = $parser->parse($rawPHPCode->get());
         $tokens = new CodeTokens($this->lexer->getTokens());
 
         return new ParseData(

@@ -7,9 +7,9 @@ namespace H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects;
 use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
 
 /**
- * ファイルから取得した生のコード.
+ * ファイルから取得した PHP のコード.
  */
-final class RawCode implements IValueObject
+final class RawPHPCode extends PHPCode implements IValueObject
 {
     public function __construct(
         private readonly string $value

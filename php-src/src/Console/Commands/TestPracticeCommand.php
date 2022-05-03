@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Console\Commands;
 
-use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawCode;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor\ChangeClassNameVisitor;
 use H37kouya\PhpAst\Core\Utils\Path;
@@ -21,10 +23,16 @@ final class TestPracticeCommand extends Command
 {
     private RawCodeToParseData $rawCodeToParseData;
 
+    private GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
+
     public function __construct()
     {
         $this->rawCodeToParseData = new RawCodeToParseData(
             new ParserFactory()
+        );
+
+        $this->generatePHPCodeFormatOrigStmts = new GeneratePHPCodeFormatOrigStmts(
+            new Standard()
         );
 
         parent::__construct();
@@ -56,10 +64,10 @@ final class TestPracticeCommand extends Command
         }
 
         // ファイルから生のコードを AST に変換
-        $rawCode = new RawCode($fp);
-        $parseData = $this->rawCodeToParseData->__invoke($rawCode);
+        $rawPHPCode = new RawPHPCode($fp);
+        $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
         $oldStmts = $parseData->hasStmts() ? $parseData->getStmts() : null;
-        $oldTokens = $parseData->getTokens();
+        $oldCodeTokens = $parseData->getTokens();
 
         // AST の修正
         $traverser = new NodeTraverser();
@@ -69,12 +77,19 @@ final class TestPracticeCommand extends Command
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
         $newStmts = $traverser->traverse($newStmts);
-        $printer = new Standard();
-        $result = $printer->printFormatPreserving($newStmts, $oldStmts, $oldTokens->get());
+
+        // AST の変換後の PHP コードを生成
+        $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(
+            new GeneratePHPCodeFormatOrigStmtsCommand(
+                stmts: $newStmts,
+                origStmts: $oldStmts,
+                codeTokens: $oldCodeTokens
+            )
+        );
 
         // PHP ファイルへの書き込み
         $newPath = Path::basePath('/sample/ddd/Domain/ValueObjects/UserIdCopy.php');
-        if (false === file_put_contents($newPath, $result)) {
+        if (false === file_put_contents($newPath, $parsedPHPCode->get())) {
             throw new RuntimeException('ファイルの書き込みに失敗しました');
         }
 
