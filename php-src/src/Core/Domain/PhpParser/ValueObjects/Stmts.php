@@ -19,13 +19,11 @@ final class Stmts implements IValueObject
     public function __construct(
         private readonly array $value
     ) {
-        if (null !== $value) {
-            foreach ($value as $stmt) {
-                if (!$stmt instanceof Stmt) {
-                    throw new DomainValueException(
-                        'value は PhpParser\Node\Stmt のみを持つことができます'
-                    );
-                }
+        foreach ($value as $stmt) {
+            if (!$stmt instanceof Stmt) {
+                throw new DomainValueException(
+                    'value は PhpParser\Node\Stmt のみを持つことができます'
+                );
             }
         }
     }

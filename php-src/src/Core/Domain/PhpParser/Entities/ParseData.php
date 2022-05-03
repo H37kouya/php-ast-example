@@ -5,30 +5,15 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Core\Domain\PhpParser\Entities;
 
 use H37kouya\PhpAst\Core\Domain\Base\Entities\IEntity;
-use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
-use PhpParser\Node\Stmt;
 
 final class ParseData implements IEntity
 {
-    /**
-     * @param null|Stmts $stmts
-     * @param CodeTokens $tokens
-     */
     public function __construct(
         private readonly ?Stmts $stmts,
         private readonly CodeTokens $tokens,
     ) {
-        if (null !== $stmts) {
-            foreach ($stmts as $stmt) {
-                if (!$stmt instanceof Stmt) {
-                    throw new DomainValueException(
-                        'stmts は PhpParser\Node\Stmt のみを持つことができます'
-                    );
-                }
-            }
-        }
     }
 
     public function getStmts(): Stmts

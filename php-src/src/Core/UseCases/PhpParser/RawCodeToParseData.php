@@ -32,8 +32,9 @@ final class RawCodeToParseData
         ]);
     }
 
-    public function __invoke(RawPHPCode $rawPHPCode): ParseData
-    {
+    public function __invoke(
+        RawPHPCode $rawPHPCode
+    ): ParseData {
         $parser = $this->parserFactory->create(
             ParserFactory::PREFER_PHP7,
             $this->lexer
