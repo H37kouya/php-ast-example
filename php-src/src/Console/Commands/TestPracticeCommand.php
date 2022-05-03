@@ -6,13 +6,13 @@ namespace H37kouya\PhpAst\Console\Commands;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\CloneStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor\ChangeClassNameVisitor;
 use H37kouya\PhpAst\Core\Utils\Path;
 use PhpParser\NodeTraverser;
-use PhpParser\NodeVisitor\CloningVisitor;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
 use RuntimeException;
@@ -22,9 +22,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class TestPracticeCommand extends Command
 {
-    private RawCodeToParseData $rawCodeToParseData;
+    private readonly RawCodeToParseData $rawCodeToParseData;
 
-    private GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
+    private readonly CloneStmts $cloneStmts;
+
+    private readonly GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
 
     public function __construct()
     {
@@ -34,6 +36,10 @@ final class TestPracticeCommand extends Command
 
         $this->generatePHPCodeFormatOrigStmts = new GeneratePHPCodeFormatOrigStmts(
             new Standard()
+        );
+
+        $this->cloneStmts = new CloneStmts(
+            new NodeTraverser()
         );
 
         parent::__construct();
@@ -62,13 +68,10 @@ final class TestPracticeCommand extends Command
         $rawPHPCode = new RawPHPCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
 
-        // AST の修正
-        $traverser = new NodeTraverser();
-        $traverser->addVisitor(new CloningVisitor());
-        $newStmts = new Stmts(
-            $traverser->traverse($parseData->getStmts()->get())
-        );
+        // AST のコピー
+        $newStmts = $this->cloneStmts->__invoke($parseData->getStmts());
 
+        // AST の修正
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
         $newStmts = new Stmts(
