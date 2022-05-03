@@ -49,13 +49,7 @@ final class TestPracticeCommand extends Command
         InputInterface $input,
         OutputInterface $output
     ) {
-        // 標準出力
-        $output->writeln('Hello World!');
-
         // PHP ファイルの取得
-        $output->writeln(
-            Path::basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
-        );
         $fp = file_get_contents(
             Path::basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
         );
@@ -66,24 +60,22 @@ final class TestPracticeCommand extends Command
         // ファイルから生のコードを AST に変換
         $rawPHPCode = new RawPHPCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
-        $oldStmts = $parseData->hasStmts() ? $parseData->getStmts() : null;
-        $oldCodeTokens = $parseData->getTokens();
 
         // AST の修正
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new CloningVisitor());
-        $newStmts = $traverser->traverse($oldStmts);
+        $newStmts = $traverser->traverse($parseData->getStmts());
 
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
         $newStmts = $traverser->traverse($newStmts);
 
-        // AST の変換後の PHP コードを生成
+        // AST から PHP コードを生成
         $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(
             new GeneratePHPCodeFormatOrigStmtsCommand(
                 stmts: $newStmts,
-                origStmts: $oldStmts,
-                codeTokens: $oldCodeTokens
+                origStmts: $parseData->hasStmts() ? $parseData->getStmts() : [],
+                codeTokens: $parseData->getTokens(),
             )
         );
 
