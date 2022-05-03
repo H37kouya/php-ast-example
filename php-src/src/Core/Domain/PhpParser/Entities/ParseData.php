@@ -7,16 +7,17 @@ namespace H37kouya\PhpAst\Core\Domain\PhpParser\Entities;
 use H37kouya\PhpAst\Core\Domain\Base\Entities\IEntity;
 use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 use PhpParser\Node\Stmt;
 
 final class ParseData implements IEntity
 {
     /**
-     * @param null|Stmt[] $stmts
-     * @param CodeTokens  $tokens
+     * @param null|Stmts $stmts
+     * @param CodeTokens $tokens
      */
     public function __construct(
-        private readonly ?array $stmts,
+        private readonly ?Stmts $stmts,
         private readonly CodeTokens $tokens,
     ) {
         if (null !== $stmts) {
@@ -30,10 +31,7 @@ final class ParseData implements IEntity
         }
     }
 
-    /**
-     * @return Stmt[]
-     */
-    public function getStmts(): array
+    public function getStmts(): Stmts
     {
         return $this->stmts;
     }
@@ -56,15 +54,15 @@ final class ParseData implements IEntity
     public function ofArray(array $arr): self
     {
         return new self(
-            $arr['stmts'] ?? null,
-            new CodeTokens($arr['tokens'] ?? []),
+            stmts: $arr['stmts'] ? new Stmts($arr['stmts']) : null,
+            tokens: new CodeTokens($arr['tokens'] ?? []),
         );
     }
 
     public function toArray(): array
     {
         return [
-            'stmts' => $this->stmts,
+            'stmts' => $this->getStmts(),
             'tokens' => $this->hasTokens()
                 ? $this->getTokens()->get()
                 : null,

@@ -4,49 +4,24 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Core\UseCases\PhpParser\Commands;
 
-use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\CodeTokens;
-use PhpParser\Node\Stmt;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 
 final class GeneratePHPCodeFormatOrigStmtsCommand
 {
-    /**
-     * @param Stmt[]     $stmts
-     * @param Stmt[]     $origStmts
-     * @param CodeTokens $codeTokens
-     */
     public function __construct(
-        private readonly array $stmts,
-        private readonly array $origStmts,
+        private readonly Stmts $stmts,
+        private readonly Stmts $origStmts,
         private readonly CodeTokens $codeTokens,
     ) {
-        if (null !== $stmts) {
-            foreach ($stmts as $stmt) {
-                if (!$stmt instanceof Stmt) {
-                    throw new DomainValueException(
-                        'stmts は PhpParser\Node\Stmt のみを持つことができます'
-                    );
-                }
-            }
-        }
-
-        if (null !== $origStmts) {
-            foreach ($origStmts as $stmt) {
-                if (!$stmt instanceof Stmt) {
-                    throw new DomainValueException(
-                        'origStmts は PhpParser\Node\Stmt のみを持つことができます'
-                    );
-                }
-            }
-        }
     }
 
-    public function getStmts(): array
+    public function getStmts(): Stmts
     {
         return $this->stmts;
     }
 
-    public function getOrigStmts(): array
+    public function getOrigStmts(): Stmts
     {
         return $this->origStmts;
     }

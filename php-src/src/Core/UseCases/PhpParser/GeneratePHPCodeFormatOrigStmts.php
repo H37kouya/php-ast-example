@@ -23,8 +23,8 @@ final class GeneratePHPCodeFormatOrigStmts
         GeneratePHPCodeFormatOrigStmtsCommand $command
     ): ParsedPHPCode {
         $code = $this->prettyPrinter->printFormatPreserving(
-            stmts: $command->getStmts(),
-            origStmts: $command->getOrigStmts(),
+            stmts: $command->getStmts()->get(),
+            origStmts: $command->getOrigStmts()->get(),
             origTokens: $command->getCodeTokens()->get(),
         );
 

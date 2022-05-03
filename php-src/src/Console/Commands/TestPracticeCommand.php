@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Console\Commands;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
@@ -64,17 +65,21 @@ final class TestPracticeCommand extends Command
         // AST の修正
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new CloningVisitor());
-        $newStmts = $traverser->traverse($parseData->getStmts());
+        $newStmts = new Stmts(
+            $traverser->traverse($parseData->getStmts()->get())
+        );
 
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
-        $newStmts = $traverser->traverse($newStmts);
+        $newStmts = new Stmts(
+            $traverser->traverse($newStmts->get())
+        );
 
         // AST から PHP コードを生成
         $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(
             new GeneratePHPCodeFormatOrigStmtsCommand(
                 stmts: $newStmts,
-                origStmts: $parseData->hasStmts() ? $parseData->getStmts() : [],
+                origStmts: $parseData->getStmts(),
                 codeTokens: $parseData->getTokens(),
             )
         );
