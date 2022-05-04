@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor;
+namespace H37kouya\PhpAst\Core\Infra\PhpParser\Visitor;
 
 use PhpParser\Node;
 use PhpParser\Node\Identifier;
