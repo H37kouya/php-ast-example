@@ -30,4 +30,9 @@ class PHPCode implements IValueObject
     {
         return (string) $this->get();
     }
+
+    public function toRawPHPCode(): RawPHPCode
+    {
+        return new RawPHPCode($this->get());
+    }
 }
