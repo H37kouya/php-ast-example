@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Console\Commands;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates\StmtsAggregate;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\ChangeClassNameStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
@@ -72,7 +73,10 @@ final class TestPracticeCommand extends Command
         }
 
         // AST の変更 (クラス名の変更)
-        $newStmts = $this->changeClassNameStmts->__invoke($stmts, 'UserIdCopy');
+        $newStmts = $this->changeClassNameStmts->__invoke(
+            $stmts,
+            new ClassName('UserIdCopy')
+        );
 
         // AST から PHP コードを生成
         $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(

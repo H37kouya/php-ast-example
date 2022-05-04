@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates;
 
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 use H37kouya\PhpAst\Core\Infra\PhpParser\Visitor\ChangeClassNameVisitor;
 use PhpParser\NodeTraverser;
@@ -34,7 +35,7 @@ final class StmtsAggregate
      */
     public function changeClassName(
         Stmts $origStmts,
-        string $newClassName
+        ClassName $newClassName
     ): Stmts {
         $changeClassNameTraverser = new NodeTraverser();
         $changeClassNameTraverser->addVisitor(
