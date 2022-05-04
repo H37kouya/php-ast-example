@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects;
 
 use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
-use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
+use H37kouya\PhpAst\Core\Domain\Exceptions\DomainValueException;
 use PhpParser\Node;
 use PhpParser\Node\Stmt;
 
