@@ -13,7 +13,7 @@ use H37kouya\PhpAst\Core\UseCases\PhpParser\ChangeClassNameStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
-use H37kouya\PhpAst\Core\UseCases\PhpParser\WriteStmtsToJsonFile;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\StoreStmts;
 use H37kouya\PhpAst\Core\Utils\Path;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
@@ -30,7 +30,7 @@ final class TestPracticeCommand extends Command
 
     private readonly GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
 
-    private readonly WriteStmtsToJsonFile $writeStmtsToJsonFile;
+    private readonly StoreStmts $storeStmtsToJsonFile;
 
     public function __construct()
     {
@@ -48,7 +48,7 @@ final class TestPracticeCommand extends Command
             new StmtsAggregate()
         );
 
-        $this->writeStmtsToJsonFile = new WriteStmtsToJsonFile(
+        $this->storeStmtsToJsonFile = new StoreStmts(
             new FpStmtsRepository(
                 Path::basePath(
                     "/storage/php/json/UserIdCopyAST_{$now->format('YmdHis')}.json"
@@ -94,7 +94,7 @@ final class TestPracticeCommand extends Command
         );
 
         // Json の保存
-        $this->writeStmtsToJsonFile->__invoke(
+        $this->storeStmtsToJsonFile->__invoke(
             stmts: $newStmts,
         );
 
