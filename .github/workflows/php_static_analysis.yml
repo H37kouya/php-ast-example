@@ -1,0 +1,67 @@
+name: PHP Static Analysis
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/php_static_analysis.yml
+      - php-src
+
+jobs:
+  build:
+    name: PHP Build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP 8.1
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+
+      - name: Get composer cache directory
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+        working-directory: php-src
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: composer-cache
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Composer install dependencies when cache does't exists
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        working-directory: php-src
+
+      - name: composer dump autoload
+        run: composer dump-autoload
+        working-directory: php-src
+
+  php-stan:
+    name: PHP Stan
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run PHP stan
+        run: composer stan
+        working-directory: php-src
+
+  deptrac:
+    name: Deptrac
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run deptrac
+        run: composer deptrac
+        working-directory: php-src
