@@ -6,8 +6,9 @@ namespace H37kouya\PhpAst\Console\Commands;
 
 use DateTime;
 use H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates\StmtsAggregate;
+use H37kouya\PhpAst\Core\Domain\PhpParser\Repositories\PHPCodeRepository;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
-use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
+use H37kouya\PhpAst\Core\Infra\PhpParser\RepositoryImpl\FpPHPCodeRepositoryImpl;
 use H37kouya\PhpAst\Core\Infra\PhpParser\RepositoryImpl\FpStmtsRepositoryImpl;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\ChangeClassNameStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
@@ -31,6 +32,10 @@ final class TestPracticeCommand extends Command
     private readonly GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
 
     private readonly StoreStmts $storeStmtsToJsonFile;
+
+    private readonly PHPCodeRepository $origFpPHPCodeRepository;
+
+    private readonly PHPCodeRepository $newFpPHPCodeRepository;
 
     public function __construct()
     {
@@ -56,6 +61,18 @@ final class TestPracticeCommand extends Command
             )
         );
 
+        $this->origFpPHPCodeRepository = new FpPHPCodeRepositoryImpl(
+            Path::basePath(
+                '/sample/ddd/Domain/ValueObjects/UserId.php'
+            )
+        );
+
+        $this->newFpPHPCodeRepository = new FpPHPCodeRepositoryImpl(
+            Path::basePath(
+                '/sample/ddd/Domain/ValueObjects/UserIdCopy.php'
+            )
+        );
+
         parent::__construct();
     }
 
@@ -71,15 +88,8 @@ final class TestPracticeCommand extends Command
         OutputInterface $output
     ) {
         // PHP ファイルの取得
-        $fp = file_get_contents(
-            Path::basePath('/sample/ddd/Domain/ValueObjects/UserId.php')
-        );
-        if (false === $fp) {
-            throw new RuntimeException('ファイルの取得に失敗しました');
-        }
-
+        $rawPHPCode = $this->origFpPHPCodeRepository->get()->toRawPHPCode();
         // ファイルから生のコードを AST に変換
-        $rawPHPCode = new RawPHPCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
 
         $stmts = $parseData->getStmts();
@@ -108,10 +118,9 @@ final class TestPracticeCommand extends Command
         );
 
         // PHP ファイルへの書き込み
-        $newPath = Path::basePath('/sample/ddd/Domain/ValueObjects/UserIdCopy.php');
-        if (false === file_put_contents($newPath, $parsedPHPCode->get())) {
-            throw new RuntimeException('ファイルの書き込みに失敗しました');
-        }
+        $this->newFpPHPCodeRepository->store(
+            phpCode: $parsedPHPCode
+        );
 
         return self::SUCCESS;
     }
