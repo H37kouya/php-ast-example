@@ -8,7 +8,7 @@ use H37kouya\PhpAst\Core\Domain\PhpParser\Repositories\StmtsRepository;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 use H37kouya\PhpAst\Core\Exceptions\FailedWriteFileException;
 
-final class FpStmtsRepository implements StmtsRepository
+final class FpStmtsRepositoryImpl implements StmtsRepository
 {
     public function __construct(
         private readonly string $filePath
