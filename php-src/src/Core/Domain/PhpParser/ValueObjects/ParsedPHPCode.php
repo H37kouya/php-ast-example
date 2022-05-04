@@ -9,7 +9,7 @@ use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
 /**
  * AST から Parse された PHP のコード.
  */
-final class ParsedPHPCode extends PHPCode implements IValueObject
+final class ParsedPHPCode extends PHPCode
 {
     public function __construct(
         private readonly string $value

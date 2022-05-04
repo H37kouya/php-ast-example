@@ -6,7 +6,7 @@ namespace H37kouya\PhpAst\Core\Domain\Base\ValueObjects;
 
 interface IValueObject
 {
-    public function get();
+    public function get(): mixed;
 
     public function equals(self $valueObject): bool;
 

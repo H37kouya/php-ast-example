@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Console\Commands;
 
+use H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates\StmtsAggregate;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
-use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
-use H37kouya\PhpAst\Core\UseCases\PhpParser\CloneStmts;
+use H37kouya\PhpAst\Core\UseCases\PhpParser\ChangeClassNameStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\RawCodeToParseData;
-use H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor\ChangeClassNameVisitor;
 use H37kouya\PhpAst\Core\Utils\Path;
-use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
 use RuntimeException;
@@ -24,7 +22,7 @@ final class TestPracticeCommand extends Command
 {
     private readonly RawCodeToParseData $rawCodeToParseData;
 
-    private readonly CloneStmts $cloneStmts;
+    private readonly ChangeClassNameStmts $changeClassNameStmts;
 
     private readonly GeneratePHPCodeFormatOrigStmts $generatePHPCodeFormatOrigStmts;
 
@@ -38,8 +36,8 @@ final class TestPracticeCommand extends Command
             new Standard()
         );
 
-        $this->cloneStmts = new CloneStmts(
-            new NodeTraverser()
+        $this->changeClassNameStmts = new ChangeClassNameStmts(
+            new StmtsAggregate()
         );
 
         parent::__construct();
@@ -68,21 +66,19 @@ final class TestPracticeCommand extends Command
         $rawPHPCode = new RawPHPCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
 
-        // AST のコピー
-        $newStmts = $this->cloneStmts->__invoke($parseData->getStmts());
+        $stmts = $parseData->getStmts();
+        if (null === $stmts) {
+            throw new RuntimeException('AST が取得できませんでした');
+        }
 
-        // AST の修正
-        $traverser = new NodeTraverser();
-        $traverser->addVisitor(new ChangeClassNameVisitor('UserIdCopy'));
-        $newStmts = new Stmts(
-            $traverser->traverse($newStmts->get())
-        );
+        // AST の変更 (クラス名の変更)
+        $newStmts = $this->changeClassNameStmts->__invoke($stmts, 'UserIdCopy');
 
         // AST から PHP コードを生成
         $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(
             new GeneratePHPCodeFormatOrigStmtsCommand(
                 stmts: $newStmts,
-                origStmts: $parseData->getStmts(),
+                origStmts: $stmts,
                 codeTokens: $parseData->getTokens(),
             )
         );

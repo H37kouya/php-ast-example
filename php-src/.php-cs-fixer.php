@@ -16,6 +16,17 @@ $rules = [
     '@PhpCsFixer' => true,
     '@PSR12' => true,
     '@PHP80Migration:risky' => true,
+    'single_line_comment_style' => [
+        'comment_types' => [
+            // 'asterisk', PHP Doc が無効になるので、コメントアウトした
+            'hash',
+        ],
+    ],
+    'phpdoc_to_comment' => [
+        'ignored_tags' => [
+            'var',
+        ],
+    ],
 ];
 
 $config = new Config();
