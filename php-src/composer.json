@@ -9,12 +9,13 @@
     "autoload": {
         "psr-4": {
             "H37kouya\\PhpAst\\": "src/",
-            "H37kouya\\SampleDDD\\": "sample/ddd"
+            "H37kouya\\SampleDDD\\": "sample/ddd/"
         }
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "qossmic/deptrac-shim": "^0.19.3"
     },
     "scripts": {
         "php-cs-fixer:fix": [
@@ -22,6 +23,9 @@
         ],
         "php-cs-fixer:dry-run": [
             "./vendor/bin/php-cs-fixer fix --diff --dry-run --verbose --config=.php-cs-fixer.php"
+        ],
+        "deptrac": [
+            "deptrac analyse --config-file=deptrac.yaml"
         ]
     }
 }
