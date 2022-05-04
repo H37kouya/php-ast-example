@@ -1,0 +1,2447 @@
+[
+    {
+        "nodeType": "Stmt_Declare",
+        "attributes": {
+            "startLine": 3,
+            "startTokenPos": 2,
+            "endLine": 3,
+            "endTokenPos": 8,
+            "origNode": {
+                "nodeType": "Stmt_Declare",
+                "attributes": {
+                    "startLine": 3,
+                    "startTokenPos": 2,
+                    "endLine": 3,
+                    "endTokenPos": 8
+                },
+                "declares": [
+                    {
+                        "nodeType": "Stmt_DeclareDeclare",
+                        "attributes": {
+                            "startLine": 3,
+                            "startTokenPos": 4,
+                            "endLine": 3,
+                            "endTokenPos": 6
+                        },
+                        "key": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 4,
+                                "endLine": 3,
+                                "endTokenPos": 4
+                            },
+                            "name": "strict_types"
+                        },
+                        "value": {
+                            "nodeType": "Scalar_LNumber",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 6,
+                                "endLine": 3,
+                                "endTokenPos": 6,
+                                "kind": 10
+                            },
+                            "value": 1
+                        }
+                    }
+                ],
+                "stmts": null
+            }
+        },
+        "declares": [
+            {
+                "nodeType": "Stmt_DeclareDeclare",
+                "attributes": {
+                    "startLine": 3,
+                    "startTokenPos": 4,
+                    "endLine": 3,
+                    "endTokenPos": 6,
+                    "origNode": {
+                        "nodeType": "Stmt_DeclareDeclare",
+                        "attributes": {
+                            "startLine": 3,
+                            "startTokenPos": 4,
+                            "endLine": 3,
+                            "endTokenPos": 6
+                        },
+                        "key": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 4,
+                                "endLine": 3,
+                                "endTokenPos": 4
+                            },
+                            "name": "strict_types"
+                        },
+                        "value": {
+                            "nodeType": "Scalar_LNumber",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 6,
+                                "endLine": 3,
+                                "endTokenPos": 6,
+                                "kind": 10
+                            },
+                            "value": 1
+                        }
+                    }
+                },
+                "key": {
+                    "nodeType": "Identifier",
+                    "attributes": {
+                        "startLine": 3,
+                        "startTokenPos": 4,
+                        "endLine": 3,
+                        "endTokenPos": 4,
+                        "origNode": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 4,
+                                "endLine": 3,
+                                "endTokenPos": 4
+                            },
+                            "name": "strict_types"
+                        }
+                    },
+                    "name": "strict_types"
+                },
+                "value": {
+                    "nodeType": "Scalar_LNumber",
+                    "attributes": {
+                        "startLine": 3,
+                        "startTokenPos": 6,
+                        "endLine": 3,
+                        "endTokenPos": 6,
+                        "kind": 10,
+                        "origNode": {
+                            "nodeType": "Scalar_LNumber",
+                            "attributes": {
+                                "startLine": 3,
+                                "startTokenPos": 6,
+                                "endLine": 3,
+                                "endTokenPos": 6,
+                                "kind": 10
+                            },
+                            "value": 1
+                        }
+                    },
+                    "value": 1
+                }
+            }
+        ],
+        "stmts": null
+    },
+    {
+        "nodeType": "Stmt_Namespace",
+        "attributes": {
+            "startLine": 5,
+            "startTokenPos": 10,
+            "endLine": 28,
+            "endTokenPos": 131,
+            "kind": 1,
+            "origNode": {
+                "nodeType": "Stmt_Namespace",
+                "attributes": {
+                    "startLine": 5,
+                    "startTokenPos": 10,
+                    "endLine": 28,
+                    "endTokenPos": 131,
+                    "kind": 1
+                },
+                "name": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 5,
+                        "startTokenPos": 12,
+                        "endLine": 5,
+                        "endTokenPos": 12
+                    },
+                    "parts": [
+                        "H37kouya",
+                        "SampleDDD",
+                        "Domain",
+                        "ValueObjects"
+                    ]
+                },
+                "stmts": [
+                    {
+                        "nodeType": "Stmt_Class",
+                        "attributes": {
+                            "startLine": 7,
+                            "startTokenPos": 15,
+                            "endLine": 28,
+                            "endTokenPos": 131
+                        },
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 7,
+                                "startTokenPos": 19,
+                                "endLine": 7,
+                                "endTokenPos": 19
+                            },
+                            "name": "UserId"
+                        },
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 9,
+                                    "startTokenPos": 27,
+                                    "endLine": 12,
+                                    "endTokenPos": 46
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 9,
+                                        "startTokenPos": 31,
+                                        "endLine": 9,
+                                        "endTokenPos": 31
+                                    },
+                                    "name": "__construct"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 10,
+                                            "startTokenPos": 34,
+                                            "endLine": 10,
+                                            "endTokenPos": 40
+                                        },
+                                        "type": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 38,
+                                                "endLine": 10,
+                                                "endTokenPos": 38
+                                            },
+                                            "name": "int"
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 40,
+                                                "endLine": 10,
+                                                "endTokenPos": 40
+                                            },
+                                            "name": "value"
+                                        },
+                                        "default": null,
+                                        "flags": 68,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": null,
+                                "stmts": [],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 14,
+                                    "startTokenPos": 48,
+                                    "endLine": 17,
+                                    "endTokenPos": 68
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 52,
+                                        "endLine": 14,
+                                        "endTokenPos": 52
+                                    },
+                                    "name": "get"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 57,
+                                        "endLine": 14,
+                                        "endTokenPos": 57
+                                    },
+                                    "name": "int"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 61,
+                                            "endLine": 16,
+                                            "endTokenPos": 66
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_PropertyFetch",
+                                            "attributes": {
+                                                "startLine": 16,
+                                                "startTokenPos": 63,
+                                                "endLine": 16,
+                                                "endTokenPos": 65
+                                            },
+                                            "var": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            },
+                                            "name": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 19,
+                                    "startTokenPos": 70,
+                                    "endLine": 22,
+                                    "endTokenPos": 103
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 74,
+                                        "endLine": 19,
+                                        "endTokenPos": 74
+                                    },
+                                    "name": "equals"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 19,
+                                            "startTokenPos": 76,
+                                            "endLine": 19,
+                                            "endTokenPos": 78
+                                        },
+                                        "type": {
+                                            "nodeType": "Name",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 76,
+                                                "endLine": 19,
+                                                "endTokenPos": 76
+                                            },
+                                            "parts": [
+                                                "IValueObject"
+                                            ]
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 78,
+                                                "endLine": 19,
+                                                "endTokenPos": 78
+                                            },
+                                            "name": "vo"
+                                        },
+                                        "default": null,
+                                        "flags": 0,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 82,
+                                        "endLine": 19,
+                                        "endTokenPos": 82
+                                    },
+                                    "name": "bool"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 86,
+                                            "endLine": 21,
+                                            "endTokenPos": 101
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_BinaryOp_Identical",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 100
+                                            },
+                                            "left": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            },
+                                            "right": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 24,
+                                    "startTokenPos": 105,
+                                    "endLine": 27,
+                                    "endTokenPos": 129
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 109,
+                                        "endLine": 24,
+                                        "endTokenPos": 109
+                                    },
+                                    "name": "__toString"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 114,
+                                        "endLine": 24,
+                                        "endTokenPos": 114
+                                    },
+                                    "name": "string"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "startTokenPos": 118,
+                                            "endLine": 26,
+                                            "endTokenPos": 127
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_Cast_String",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 120,
+                                                "endLine": 26,
+                                                "endTokenPos": 126
+                                            },
+                                            "expr": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            }
+                        ],
+                        "attrGroups": [],
+                        "namespacedName": null,
+                        "flags": 32,
+                        "extends": null,
+                        "implements": [
+                            {
+                                "nodeType": "Name",
+                                "attributes": {
+                                    "startLine": 7,
+                                    "startTokenPos": 23,
+                                    "endLine": 7,
+                                    "endTokenPos": 23
+                                },
+                                "parts": [
+                                    "IValueObject"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "name": {
+            "nodeType": "Name",
+            "attributes": {
+                "startLine": 5,
+                "startTokenPos": 12,
+                "endLine": 5,
+                "endTokenPos": 12,
+                "origNode": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 5,
+                        "startTokenPos": 12,
+                        "endLine": 5,
+                        "endTokenPos": 12
+                    },
+                    "parts": [
+                        "H37kouya",
+                        "SampleDDD",
+                        "Domain",
+                        "ValueObjects"
+                    ]
+                }
+            },
+            "parts": [
+                "H37kouya",
+                "SampleDDD",
+                "Domain",
+                "ValueObjects"
+            ]
+        },
+        "stmts": [
+            {
+                "nodeType": "Stmt_Class",
+                "attributes": {
+                    "startLine": 7,
+                    "startTokenPos": 15,
+                    "endLine": 28,
+                    "endTokenPos": 131,
+                    "origNode": {
+                        "nodeType": "Stmt_Class",
+                        "attributes": {
+                            "startLine": 7,
+                            "startTokenPos": 15,
+                            "endLine": 28,
+                            "endTokenPos": 131
+                        },
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 7,
+                                "startTokenPos": 19,
+                                "endLine": 7,
+                                "endTokenPos": 19
+                            },
+                            "name": "UserId"
+                        },
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 9,
+                                    "startTokenPos": 27,
+                                    "endLine": 12,
+                                    "endTokenPos": 46
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 9,
+                                        "startTokenPos": 31,
+                                        "endLine": 9,
+                                        "endTokenPos": 31
+                                    },
+                                    "name": "__construct"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 10,
+                                            "startTokenPos": 34,
+                                            "endLine": 10,
+                                            "endTokenPos": 40
+                                        },
+                                        "type": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 38,
+                                                "endLine": 10,
+                                                "endTokenPos": 38
+                                            },
+                                            "name": "int"
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 40,
+                                                "endLine": 10,
+                                                "endTokenPos": 40
+                                            },
+                                            "name": "value"
+                                        },
+                                        "default": null,
+                                        "flags": 68,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": null,
+                                "stmts": [],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 14,
+                                    "startTokenPos": 48,
+                                    "endLine": 17,
+                                    "endTokenPos": 68
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 52,
+                                        "endLine": 14,
+                                        "endTokenPos": 52
+                                    },
+                                    "name": "get"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 57,
+                                        "endLine": 14,
+                                        "endTokenPos": 57
+                                    },
+                                    "name": "int"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 61,
+                                            "endLine": 16,
+                                            "endTokenPos": 66
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_PropertyFetch",
+                                            "attributes": {
+                                                "startLine": 16,
+                                                "startTokenPos": 63,
+                                                "endLine": 16,
+                                                "endTokenPos": 65
+                                            },
+                                            "var": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            },
+                                            "name": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 19,
+                                    "startTokenPos": 70,
+                                    "endLine": 22,
+                                    "endTokenPos": 103
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 74,
+                                        "endLine": 19,
+                                        "endTokenPos": 74
+                                    },
+                                    "name": "equals"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 19,
+                                            "startTokenPos": 76,
+                                            "endLine": 19,
+                                            "endTokenPos": 78
+                                        },
+                                        "type": {
+                                            "nodeType": "Name",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 76,
+                                                "endLine": 19,
+                                                "endTokenPos": 76
+                                            },
+                                            "parts": [
+                                                "IValueObject"
+                                            ]
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 78,
+                                                "endLine": 19,
+                                                "endTokenPos": 78
+                                            },
+                                            "name": "vo"
+                                        },
+                                        "default": null,
+                                        "flags": 0,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 82,
+                                        "endLine": 19,
+                                        "endTokenPos": 82
+                                    },
+                                    "name": "bool"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 86,
+                                            "endLine": 21,
+                                            "endTokenPos": 101
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_BinaryOp_Identical",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 100
+                                            },
+                                            "left": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            },
+                                            "right": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            },
+                            {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 24,
+                                    "startTokenPos": 105,
+                                    "endLine": 27,
+                                    "endTokenPos": 129
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 109,
+                                        "endLine": 24,
+                                        "endTokenPos": 109
+                                    },
+                                    "name": "__toString"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 114,
+                                        "endLine": 24,
+                                        "endTokenPos": 114
+                                    },
+                                    "name": "string"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "startTokenPos": 118,
+                                            "endLine": 26,
+                                            "endTokenPos": 127
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_Cast_String",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 120,
+                                                "endLine": 26,
+                                                "endTokenPos": 126
+                                            },
+                                            "expr": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            }
+                        ],
+                        "attrGroups": [],
+                        "namespacedName": null,
+                        "flags": 32,
+                        "extends": null,
+                        "implements": [
+                            {
+                                "nodeType": "Name",
+                                "attributes": {
+                                    "startLine": 7,
+                                    "startTokenPos": 23,
+                                    "endLine": 7,
+                                    "endTokenPos": 23
+                                },
+                                "parts": [
+                                    "IValueObject"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "name": {
+                    "nodeType": "Identifier",
+                    "attributes": [],
+                    "name": "UserIdCopy"
+                },
+                "stmts": [
+                    {
+                        "nodeType": "Stmt_ClassMethod",
+                        "attributes": {
+                            "startLine": 9,
+                            "startTokenPos": 27,
+                            "endLine": 12,
+                            "endTokenPos": 46,
+                            "origNode": {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 9,
+                                    "startTokenPos": 27,
+                                    "endLine": 12,
+                                    "endTokenPos": 46
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 9,
+                                        "startTokenPos": 31,
+                                        "endLine": 9,
+                                        "endTokenPos": 31
+                                    },
+                                    "name": "__construct"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 10,
+                                            "startTokenPos": 34,
+                                            "endLine": 10,
+                                            "endTokenPos": 40
+                                        },
+                                        "type": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 38,
+                                                "endLine": 10,
+                                                "endTokenPos": 38
+                                            },
+                                            "name": "int"
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 40,
+                                                "endLine": 10,
+                                                "endTokenPos": 40
+                                            },
+                                            "name": "value"
+                                        },
+                                        "default": null,
+                                        "flags": 68,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": null,
+                                "stmts": [],
+                                "attrGroups": []
+                            }
+                        },
+                        "flags": 1,
+                        "byRef": false,
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 9,
+                                "startTokenPos": 31,
+                                "endLine": 9,
+                                "endTokenPos": 31,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 9,
+                                        "startTokenPos": 31,
+                                        "endLine": 9,
+                                        "endTokenPos": 31
+                                    },
+                                    "name": "__construct"
+                                }
+                            },
+                            "name": "__construct"
+                        },
+                        "params": [
+                            {
+                                "nodeType": "Param",
+                                "attributes": {
+                                    "startLine": 10,
+                                    "startTokenPos": 34,
+                                    "endLine": 10,
+                                    "endTokenPos": 40,
+                                    "origNode": {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 10,
+                                            "startTokenPos": 34,
+                                            "endLine": 10,
+                                            "endTokenPos": 40
+                                        },
+                                        "type": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 38,
+                                                "endLine": 10,
+                                                "endTokenPos": 38
+                                            },
+                                            "name": "int"
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 40,
+                                                "endLine": 10,
+                                                "endTokenPos": 40
+                                            },
+                                            "name": "value"
+                                        },
+                                        "default": null,
+                                        "flags": 68,
+                                        "attrGroups": []
+                                    }
+                                },
+                                "type": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 10,
+                                        "startTokenPos": 38,
+                                        "endLine": 10,
+                                        "endTokenPos": 38,
+                                        "origNode": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 38,
+                                                "endLine": 10,
+                                                "endTokenPos": 38
+                                            },
+                                            "name": "int"
+                                        }
+                                    },
+                                    "name": "int"
+                                },
+                                "byRef": false,
+                                "variadic": false,
+                                "var": {
+                                    "nodeType": "Expr_Variable",
+                                    "attributes": {
+                                        "startLine": 10,
+                                        "startTokenPos": 40,
+                                        "endLine": 10,
+                                        "endTokenPos": 40,
+                                        "origNode": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 10,
+                                                "startTokenPos": 40,
+                                                "endLine": 10,
+                                                "endTokenPos": 40
+                                            },
+                                            "name": "value"
+                                        }
+                                    },
+                                    "name": "value"
+                                },
+                                "default": null,
+                                "flags": 68,
+                                "attrGroups": []
+                            }
+                        ],
+                        "returnType": null,
+                        "stmts": [],
+                        "attrGroups": []
+                    },
+                    {
+                        "nodeType": "Stmt_ClassMethod",
+                        "attributes": {
+                            "startLine": 14,
+                            "startTokenPos": 48,
+                            "endLine": 17,
+                            "endTokenPos": 68,
+                            "origNode": {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 14,
+                                    "startTokenPos": 48,
+                                    "endLine": 17,
+                                    "endTokenPos": 68
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 52,
+                                        "endLine": 14,
+                                        "endTokenPos": 52
+                                    },
+                                    "name": "get"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 57,
+                                        "endLine": 14,
+                                        "endTokenPos": 57
+                                    },
+                                    "name": "int"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 61,
+                                            "endLine": 16,
+                                            "endTokenPos": 66
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_PropertyFetch",
+                                            "attributes": {
+                                                "startLine": 16,
+                                                "startTokenPos": 63,
+                                                "endLine": 16,
+                                                "endTokenPos": 65
+                                            },
+                                            "var": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            },
+                                            "name": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            }
+                        },
+                        "flags": 1,
+                        "byRef": false,
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 14,
+                                "startTokenPos": 52,
+                                "endLine": 14,
+                                "endTokenPos": 52,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 52,
+                                        "endLine": 14,
+                                        "endTokenPos": 52
+                                    },
+                                    "name": "get"
+                                }
+                            },
+                            "name": "get"
+                        },
+                        "params": [],
+                        "returnType": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 14,
+                                "startTokenPos": 57,
+                                "endLine": 14,
+                                "endTokenPos": 57,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 14,
+                                        "startTokenPos": 57,
+                                        "endLine": 14,
+                                        "endTokenPos": 57
+                                    },
+                                    "name": "int"
+                                }
+                            },
+                            "name": "int"
+                        },
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_Return",
+                                "attributes": {
+                                    "startLine": 16,
+                                    "startTokenPos": 61,
+                                    "endLine": 16,
+                                    "endTokenPos": 66,
+                                    "origNode": {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 61,
+                                            "endLine": 16,
+                                            "endTokenPos": 66
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_PropertyFetch",
+                                            "attributes": {
+                                                "startLine": 16,
+                                                "startTokenPos": 63,
+                                                "endLine": 16,
+                                                "endTokenPos": 65
+                                            },
+                                            "var": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            },
+                                            "name": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        }
+                                    }
+                                },
+                                "expr": {
+                                    "nodeType": "Expr_PropertyFetch",
+                                    "attributes": {
+                                        "startLine": 16,
+                                        "startTokenPos": 63,
+                                        "endLine": 16,
+                                        "endTokenPos": 65,
+                                        "origNode": {
+                                            "nodeType": "Expr_PropertyFetch",
+                                            "attributes": {
+                                                "startLine": 16,
+                                                "startTokenPos": 63,
+                                                "endLine": 16,
+                                                "endTokenPos": 65
+                                            },
+                                            "var": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            },
+                                            "name": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        }
+                                    },
+                                    "var": {
+                                        "nodeType": "Expr_Variable",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 63,
+                                            "endLine": 16,
+                                            "endTokenPos": 63,
+                                            "origNode": {
+                                                "nodeType": "Expr_Variable",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 63,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 63
+                                                },
+                                                "name": "this"
+                                            }
+                                        },
+                                        "name": "this"
+                                    },
+                                    "name": {
+                                        "nodeType": "Identifier",
+                                        "attributes": {
+                                            "startLine": 16,
+                                            "startTokenPos": 65,
+                                            "endLine": 16,
+                                            "endTokenPos": 65,
+                                            "origNode": {
+                                                "nodeType": "Identifier",
+                                                "attributes": {
+                                                    "startLine": 16,
+                                                    "startTokenPos": 65,
+                                                    "endLine": 16,
+                                                    "endTokenPos": 65
+                                                },
+                                                "name": "value"
+                                            }
+                                        },
+                                        "name": "value"
+                                    }
+                                }
+                            }
+                        ],
+                        "attrGroups": []
+                    },
+                    {
+                        "nodeType": "Stmt_ClassMethod",
+                        "attributes": {
+                            "startLine": 19,
+                            "startTokenPos": 70,
+                            "endLine": 22,
+                            "endTokenPos": 103,
+                            "origNode": {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 19,
+                                    "startTokenPos": 70,
+                                    "endLine": 22,
+                                    "endTokenPos": 103
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 74,
+                                        "endLine": 19,
+                                        "endTokenPos": 74
+                                    },
+                                    "name": "equals"
+                                },
+                                "params": [
+                                    {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 19,
+                                            "startTokenPos": 76,
+                                            "endLine": 19,
+                                            "endTokenPos": 78
+                                        },
+                                        "type": {
+                                            "nodeType": "Name",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 76,
+                                                "endLine": 19,
+                                                "endTokenPos": 76
+                                            },
+                                            "parts": [
+                                                "IValueObject"
+                                            ]
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 78,
+                                                "endLine": 19,
+                                                "endTokenPos": 78
+                                            },
+                                            "name": "vo"
+                                        },
+                                        "default": null,
+                                        "flags": 0,
+                                        "attrGroups": []
+                                    }
+                                ],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 82,
+                                        "endLine": 19,
+                                        "endTokenPos": 82
+                                    },
+                                    "name": "bool"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 86,
+                                            "endLine": 21,
+                                            "endTokenPos": 101
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_BinaryOp_Identical",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 100
+                                            },
+                                            "left": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            },
+                                            "right": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            }
+                        },
+                        "flags": 1,
+                        "byRef": false,
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 19,
+                                "startTokenPos": 74,
+                                "endLine": 19,
+                                "endTokenPos": 74,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 74,
+                                        "endLine": 19,
+                                        "endTokenPos": 74
+                                    },
+                                    "name": "equals"
+                                }
+                            },
+                            "name": "equals"
+                        },
+                        "params": [
+                            {
+                                "nodeType": "Param",
+                                "attributes": {
+                                    "startLine": 19,
+                                    "startTokenPos": 76,
+                                    "endLine": 19,
+                                    "endTokenPos": 78,
+                                    "origNode": {
+                                        "nodeType": "Param",
+                                        "attributes": {
+                                            "startLine": 19,
+                                            "startTokenPos": 76,
+                                            "endLine": 19,
+                                            "endTokenPos": 78
+                                        },
+                                        "type": {
+                                            "nodeType": "Name",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 76,
+                                                "endLine": 19,
+                                                "endTokenPos": 76
+                                            },
+                                            "parts": [
+                                                "IValueObject"
+                                            ]
+                                        },
+                                        "byRef": false,
+                                        "variadic": false,
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 78,
+                                                "endLine": 19,
+                                                "endTokenPos": 78
+                                            },
+                                            "name": "vo"
+                                        },
+                                        "default": null,
+                                        "flags": 0,
+                                        "attrGroups": []
+                                    }
+                                },
+                                "type": {
+                                    "nodeType": "Name",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 76,
+                                        "endLine": 19,
+                                        "endTokenPos": 76,
+                                        "origNode": {
+                                            "nodeType": "Name",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 76,
+                                                "endLine": 19,
+                                                "endTokenPos": 76
+                                            },
+                                            "parts": [
+                                                "IValueObject"
+                                            ]
+                                        }
+                                    },
+                                    "parts": [
+                                        "IValueObject"
+                                    ]
+                                },
+                                "byRef": false,
+                                "variadic": false,
+                                "var": {
+                                    "nodeType": "Expr_Variable",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 78,
+                                        "endLine": 19,
+                                        "endTokenPos": 78,
+                                        "origNode": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "startTokenPos": 78,
+                                                "endLine": 19,
+                                                "endTokenPos": 78
+                                            },
+                                            "name": "vo"
+                                        }
+                                    },
+                                    "name": "vo"
+                                },
+                                "default": null,
+                                "flags": 0,
+                                "attrGroups": []
+                            }
+                        ],
+                        "returnType": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 19,
+                                "startTokenPos": 82,
+                                "endLine": 19,
+                                "endTokenPos": 82,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "startTokenPos": 82,
+                                        "endLine": 19,
+                                        "endTokenPos": 82
+                                    },
+                                    "name": "bool"
+                                }
+                            },
+                            "name": "bool"
+                        },
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_Return",
+                                "attributes": {
+                                    "startLine": 21,
+                                    "startTokenPos": 86,
+                                    "endLine": 21,
+                                    "endTokenPos": 101,
+                                    "origNode": {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 86,
+                                            "endLine": 21,
+                                            "endTokenPos": 101
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_BinaryOp_Identical",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 100
+                                            },
+                                            "left": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            },
+                                            "right": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                },
+                                "expr": {
+                                    "nodeType": "Expr_BinaryOp_Identical",
+                                    "attributes": {
+                                        "startLine": 21,
+                                        "startTokenPos": 88,
+                                        "endLine": 21,
+                                        "endTokenPos": 100,
+                                        "origNode": {
+                                            "nodeType": "Expr_BinaryOp_Identical",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 100
+                                            },
+                                            "left": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            },
+                                            "right": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    },
+                                    "left": {
+                                        "nodeType": "Expr_MethodCall",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 88,
+                                            "endLine": 21,
+                                            "endTokenPos": 92,
+                                            "origNode": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 88,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 92
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        },
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 88,
+                                                "endLine": 21,
+                                                "endTokenPos": 88,
+                                                "origNode": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 88,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 88
+                                                    },
+                                                    "name": "this"
+                                                }
+                                            },
+                                            "name": "this"
+                                        },
+                                        "name": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 90,
+                                                "endLine": 21,
+                                                "endTokenPos": 90,
+                                                "origNode": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 90,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 90
+                                                    },
+                                                    "name": "get"
+                                                }
+                                            },
+                                            "name": "get"
+                                        },
+                                        "args": []
+                                    },
+                                    "right": {
+                                        "nodeType": "Expr_MethodCall",
+                                        "attributes": {
+                                            "startLine": 21,
+                                            "startTokenPos": 96,
+                                            "endLine": 21,
+                                            "endTokenPos": 100,
+                                            "origNode": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "startTokenPos": 96,
+                                                    "endLine": 21,
+                                                    "endTokenPos": 100
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        },
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 96,
+                                                "endLine": 21,
+                                                "endTokenPos": 96,
+                                                "origNode": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 96,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 96
+                                                    },
+                                                    "name": "vo"
+                                                }
+                                            },
+                                            "name": "vo"
+                                        },
+                                        "name": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "startTokenPos": 98,
+                                                "endLine": 21,
+                                                "endTokenPos": 98,
+                                                "origNode": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "startTokenPos": 98,
+                                                        "endLine": 21,
+                                                        "endTokenPos": 98
+                                                    },
+                                                    "name": "get"
+                                                }
+                                            },
+                                            "name": "get"
+                                        },
+                                        "args": []
+                                    }
+                                }
+                            }
+                        ],
+                        "attrGroups": []
+                    },
+                    {
+                        "nodeType": "Stmt_ClassMethod",
+                        "attributes": {
+                            "startLine": 24,
+                            "startTokenPos": 105,
+                            "endLine": 27,
+                            "endTokenPos": 129,
+                            "origNode": {
+                                "nodeType": "Stmt_ClassMethod",
+                                "attributes": {
+                                    "startLine": 24,
+                                    "startTokenPos": 105,
+                                    "endLine": 27,
+                                    "endTokenPos": 129
+                                },
+                                "flags": 1,
+                                "byRef": false,
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 109,
+                                        "endLine": 24,
+                                        "endTokenPos": 109
+                                    },
+                                    "name": "__toString"
+                                },
+                                "params": [],
+                                "returnType": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 114,
+                                        "endLine": 24,
+                                        "endTokenPos": 114
+                                    },
+                                    "name": "string"
+                                },
+                                "stmts": [
+                                    {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "startTokenPos": 118,
+                                            "endLine": 26,
+                                            "endTokenPos": 127
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_Cast_String",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 120,
+                                                "endLine": 26,
+                                                "endTokenPos": 126
+                                            },
+                                            "expr": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                ],
+                                "attrGroups": []
+                            }
+                        },
+                        "flags": 1,
+                        "byRef": false,
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 24,
+                                "startTokenPos": 109,
+                                "endLine": 24,
+                                "endTokenPos": 109,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 109,
+                                        "endLine": 24,
+                                        "endTokenPos": 109
+                                    },
+                                    "name": "__toString"
+                                }
+                            },
+                            "name": "__toString"
+                        },
+                        "params": [],
+                        "returnType": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 24,
+                                "startTokenPos": 114,
+                                "endLine": 24,
+                                "endTokenPos": 114,
+                                "origNode": {
+                                    "nodeType": "Identifier",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "startTokenPos": 114,
+                                        "endLine": 24,
+                                        "endTokenPos": 114
+                                    },
+                                    "name": "string"
+                                }
+                            },
+                            "name": "string"
+                        },
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_Return",
+                                "attributes": {
+                                    "startLine": 26,
+                                    "startTokenPos": 118,
+                                    "endLine": 26,
+                                    "endTokenPos": 127,
+                                    "origNode": {
+                                        "nodeType": "Stmt_Return",
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "startTokenPos": 118,
+                                            "endLine": 26,
+                                            "endTokenPos": 127
+                                        },
+                                        "expr": {
+                                            "nodeType": "Expr_Cast_String",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 120,
+                                                "endLine": 26,
+                                                "endTokenPos": 126
+                                            },
+                                            "expr": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    }
+                                },
+                                "expr": {
+                                    "nodeType": "Expr_Cast_String",
+                                    "attributes": {
+                                        "startLine": 26,
+                                        "startTokenPos": 120,
+                                        "endLine": 26,
+                                        "endTokenPos": 126,
+                                        "origNode": {
+                                            "nodeType": "Expr_Cast_String",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 120,
+                                                "endLine": 26,
+                                                "endTokenPos": 126
+                                            },
+                                            "expr": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        }
+                                    },
+                                    "expr": {
+                                        "nodeType": "Expr_MethodCall",
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "startTokenPos": 122,
+                                            "endLine": 26,
+                                            "endTokenPos": 126,
+                                            "origNode": {
+                                                "nodeType": "Expr_MethodCall",
+                                                "attributes": {
+                                                    "startLine": 26,
+                                                    "startTokenPos": 122,
+                                                    "endLine": 26,
+                                                    "endTokenPos": 126
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                },
+                                                "args": []
+                                            }
+                                        },
+                                        "var": {
+                                            "nodeType": "Expr_Variable",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 122,
+                                                "endLine": 26,
+                                                "endTokenPos": 122,
+                                                "origNode": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 122,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 122
+                                                    },
+                                                    "name": "this"
+                                                }
+                                            },
+                                            "name": "this"
+                                        },
+                                        "name": {
+                                            "nodeType": "Identifier",
+                                            "attributes": {
+                                                "startLine": 26,
+                                                "startTokenPos": 124,
+                                                "endLine": 26,
+                                                "endTokenPos": 124,
+                                                "origNode": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 26,
+                                                        "startTokenPos": 124,
+                                                        "endLine": 26,
+                                                        "endTokenPos": 124
+                                                    },
+                                                    "name": "get"
+                                                }
+                                            },
+                                            "name": "get"
+                                        },
+                                        "args": []
+                                    }
+                                }
+                            }
+                        ],
+                        "attrGroups": []
+                    }
+                ],
+                "attrGroups": [],
+                "namespacedName": null,
+                "flags": 32,
+                "extends": null,
+                "implements": [
+                    {
+                        "nodeType": "Name",
+                        "attributes": {
+                            "startLine": 7,
+                            "startTokenPos": 23,
+                            "endLine": 7,
+                            "endTokenPos": 23,
+                            "origNode": {
+                                "nodeType": "Name",
+                                "attributes": {
+                                    "startLine": 7,
+                                    "startTokenPos": 23,
+                                    "endLine": 7,
+                                    "endTokenPos": 23
+                                },
+                                "parts": [
+                                    "IValueObject"
+                                ]
+                            }
+                        },
+                        "parts": [
+                            "IValueObject"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

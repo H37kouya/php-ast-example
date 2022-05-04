@@ -50,14 +50,19 @@ final class Stmts implements IValueObject
         return $this->get() === $vo->get();
     }
 
-    public function __toString(): string
+    public function toJson(): string
     {
-        $json = json_encode($this->get());
+        $json = json_encode($this->get(), JSON_PRETTY_PRINT);
 
         if (false === $json) {
             throw new DomainValueException('Stmts を json に変換できませんでした.');
         }
 
         return $json;
+    }
+
+    public function __toString(): string
+    {
+        return $this->toJson();
     }
 }
