@@ -8,7 +8,7 @@ use DateTime;
 use H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates\StmtsAggregate;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\RawPHPCode;
-use H37kouya\PhpAst\Core\Infra\PhpParser\RepositoryImpl\FpStmtsRepository;
+use H37kouya\PhpAst\Core\Infra\PhpParser\RepositoryImpl\FpStmtsRepositoryImpl;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\ChangeClassNameStmts;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\Commands\GeneratePHPCodeFormatOrigStmtsCommand;
 use H37kouya\PhpAst\Core\UseCases\PhpParser\GeneratePHPCodeFormatOrigStmts;
@@ -49,7 +49,7 @@ final class TestPracticeCommand extends Command
         );
 
         $this->storeStmtsToJsonFile = new StoreStmts(
-            new FpStmtsRepository(
+            new FpStmtsRepositoryImpl(
                 Path::basePath(
                     "/storage/php/json/UserIdCopyAST_{$now->format('YmdHis')}.json"
                 )
