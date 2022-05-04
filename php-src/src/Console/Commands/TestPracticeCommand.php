@@ -68,8 +68,13 @@ final class TestPracticeCommand extends Command
         $rawPHPCode = new RawPHPCode($fp);
         $parseData = $this->rawCodeToParseData->__invoke($rawPHPCode);
 
+        $stmts = $parseData->getStmts();
+        if (null === $stmts) {
+            throw new RuntimeException('AST が取得できませんでした');
+        }
+
         // AST のコピー
-        $newStmts = $this->cloneStmts->__invoke($parseData->getStmts());
+        $newStmts = $this->cloneStmts->__invoke($stmts);
 
         // AST の修正
         $traverser = new NodeTraverser();
@@ -82,7 +87,7 @@ final class TestPracticeCommand extends Command
         $parsedPHPCode = $this->generatePHPCodeFormatOrigStmts->__invoke(
             new GeneratePHPCodeFormatOrigStmtsCommand(
                 stmts: $newStmts,
-                origStmts: $parseData->getStmts(),
+                origStmts: $stmts,
                 codeTokens: $parseData->getTokens(),
             )
         );

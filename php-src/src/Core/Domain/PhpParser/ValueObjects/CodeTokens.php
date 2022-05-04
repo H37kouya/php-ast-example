@@ -11,11 +11,15 @@ use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
  */
 final class CodeTokens implements IValueObject
 {
+    /** @param mixed[] $value */
     public function __construct(
         private readonly array $value
     ) {
     }
 
+    /**
+     * @return mixed[]
+     */
     public function get(): array
     {
         return $this->value;

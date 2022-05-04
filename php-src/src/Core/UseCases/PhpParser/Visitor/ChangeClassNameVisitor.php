@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Core\UseCases\PhpParser\Visitor;
 
 use PhpParser\Node;
+use PhpParser\Node\Identifier;
 use PhpParser\Node\Stmt\Class_;
 use PhpParser\NodeVisitorAbstract;
 
@@ -18,11 +19,13 @@ final class ChangeClassNameVisitor extends NodeVisitorAbstract
     ) {
     }
 
-    public function enterNode(Node $node): void
+    public function enterNode(Node $node): null|int|Node
     {
         // クラス名の変更
         if ($node instanceof Class_) {
-            $node->name = $this->newClassName;
+            $node->name = new Identifier($this->newClassName);
         }
+
+        return null;
     }
 }

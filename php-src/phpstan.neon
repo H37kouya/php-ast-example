@@ -1,0 +1,9 @@
+includes:
+  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+  - vendor/phpstan/phpstan-php-parser/extension.neon
+parameters:
+  level: 8
+  paths:
+    - src
+  checkGenericClassInNonGenericObjectType: false
+

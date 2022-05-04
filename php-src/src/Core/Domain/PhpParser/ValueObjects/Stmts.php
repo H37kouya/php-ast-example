@@ -6,6 +6,7 @@ namespace H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects;
 
 use H37kouya\PhpAst\Core\Domain\Base\ValueObjects\IValueObject;
 use H37kouya\PhpAst\Core\Domain\Exception\DomainValueException;
+use PhpParser\Node;
 use PhpParser\Node\Stmt;
 
 /**
@@ -14,10 +15,15 @@ use PhpParser\Node\Stmt;
 final class Stmts implements IValueObject
 {
     /**
-     * @param Stmt[] $value
+     * @var Stmt[]
+     */
+    private readonly array $value;
+
+    /**
+     * @param (Node|Stmt)[] $value
      */
     public function __construct(
-        private readonly array $value
+        array $value
     ) {
         foreach ($value as $stmt) {
             if (!$stmt instanceof Stmt) {
@@ -26,6 +32,9 @@ final class Stmts implements IValueObject
                 );
             }
         }
+
+        /** @var Stmt[] $value */
+        $this->value = $value;
     }
 
     /**
