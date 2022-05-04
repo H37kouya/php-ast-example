@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace H37kouya\PhpAst\Core\Infra\PhpParser\Visitor;
 
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
 use PhpParser\Node;
 use PhpParser\Node\Identifier;
 use PhpParser\Node\Stmt\Class_;
@@ -15,7 +16,7 @@ use PhpParser\NodeVisitorAbstract;
 final class ChangeClassNameVisitor extends NodeVisitorAbstract
 {
     public function __construct(
-        private readonly string $newClassName
+        private readonly ClassName $newClassName
     ) {
     }
 
@@ -23,7 +24,7 @@ final class ChangeClassNameVisitor extends NodeVisitorAbstract
     {
         // クラス名の変更
         if ($node instanceof Class_) {
-            $node->name = new Identifier($this->newClassName);
+            $node->name = new Identifier($this->newClassName->get());
         }
 
         return null;

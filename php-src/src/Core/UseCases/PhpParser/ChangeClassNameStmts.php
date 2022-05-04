@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H37kouya\PhpAst\Core\UseCases\PhpParser;
 
 use H37kouya\PhpAst\Core\Domain\PhpParser\Aggregates\StmtsAggregate;
+use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\ClassName;
 use H37kouya\PhpAst\Core\Domain\PhpParser\ValueObjects\Stmts;
 
 /**
@@ -19,7 +20,7 @@ final class ChangeClassNameStmts
 
     public function __invoke(
         Stmts $origStmts,
-        string $newClassName
+        ClassName $newClassName
     ): Stmts {
         // AST のコピー
         $copiedStmts = $this->stmtsAggregates->copy($origStmts);
