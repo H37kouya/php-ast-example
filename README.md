@@ -31,3 +31,9 @@ DDD のサンプルコードをまとめて、他言語に変換することを�
 - Version: TODO
 - Library:
   - TypeScript
+
+### Kotlin
+
+- OpenJDK 17
+- Library:
+  - [javaparser/javaparser](https://github.com/javaparser/javaparser)

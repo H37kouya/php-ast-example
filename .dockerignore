@@ -17,3 +17,8 @@
 **.editorconfig
 **.gitattributes
 **.gitignore
+.idea
+*.iml
+kotlin-src/.gradle
+kotlin-src/gradle
+out/
