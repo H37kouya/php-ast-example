@@ -9,3 +9,14 @@ services:
       - type: bind
         source: ./php-src
         target: /data
+
+  kotlin:
+    build:
+      context: .
+      dockerfile: ./docker/kotlin/Dockerfile
+      target: ${KOTLIN_BUILD_TARGET:-development}
+    tty: true
+    volumes:
+      - type: bind
+        source: ./kotlin-src
+        target: /data
