@@ -42,7 +42,14 @@ dependencies {
 tasks.compileKotlin {
     // ビルド時にktlint（に限らずタスク類）を走らせる
     // https://qiita.com/wrongwrong/items/86dfda0cdad5de57e619
-    dependsOn("ktlintFormat")
+    val ktLintOption: String =
+            if (System.getenv("IS_CI")?.toBoolean() == true) {
+                "ktlintCheck" // CI環境ならチェック（失敗すると落ちる）
+            } else {
+                "ktlintFormat" // CI環境じゃなければfix（自動修正を走らせる）
+            }
+
+    dependsOn(ktLintOption)
     kotlinOptions { jvmTarget = "1.8" }
 }
 

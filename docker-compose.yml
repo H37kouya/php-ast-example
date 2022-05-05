@@ -20,3 +20,5 @@ services:
       - type: bind
         source: ./kotlin-src
         target: /data
+    environment:
+      - IS_CI=false

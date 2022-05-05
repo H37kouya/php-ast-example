@@ -1,6 +1,8 @@
 name: PHP Static Analysis
 
 on:
+  push:
+    branches: [main]
   pull_request:
     paths:
       - .github/workflows/php_static_analysis.yml
