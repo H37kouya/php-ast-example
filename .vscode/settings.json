@@ -1,9 +1,15 @@
 {
-    "editor.formatOnSave": true,
-    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.config": "../php-src/.php-cs-fixer.php",
-    "php-cs-fixer.allowRisky": true,
-    "[php]": {
-        "editor.defaultFormatter": "junstyle.php-cs-fixer",
-    },
+  "editor.formatOnSave": true,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.config": "../php-src/.php-cs-fixer.php",
+  "php-cs-fixer.allowRisky": true,
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer",
+  },
+  "[kotlin]": {
+    "editor.defaultFormatter": "cstef.kotlin-formatter"
+  },
+  "[kotlinscript]": {
+    "editor.defaultFormatter": "cstef.kotlin-formatter"
+  }
 }
